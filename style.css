@@ -1,0 +1,181 @@
+:root {
+  --bg1: #0f1724;
+  --bg2: #081026;
+  --accent: #a37cff;
+  --muted: #9aa7bf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(163,124,255,0.08), transparent),
+              linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: #e8eefc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.card {
+  width: 100%;
+  max-width: 900px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 18px;
+  padding: 36px;
+  box-shadow: 0 10px 40px rgba(3,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.heart {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--accent), #ff7ab6);
+  border-radius: 14px;
+  box-shadow: 0 6px 30px rgba(163,124,255,0.12);
+}
+
+.heart svg {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 4px 18px rgba(163,124,255,0.18));
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  font-size: 28px;
+}
+
+p.lead {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.content {
+  margin-top: 28px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.message {
+  flex: 1;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.message .poem {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f6f8ff;
+}
+
+.meta {
+  width: 220px;
+  flex: 0 0 220px;
+  text-align: center;
+}
+
+.meta small {
+  display: block;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.btn {
+  display: inline-block;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #e8eefc;
+}
+
+.reveal {
+  margin-top: 16px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2,6,23,0.8), rgba(2,6,23,0.94));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(6px);
+}
+
+.box {
+  max-width: 760px;
+  background: linear-gradient(180deg, #071026 0%, #061220 60%);
+  padding: 36px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.box h2 {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 12px;
+  font-size: 26px;
+}
+
+.box p {
+  margin: 0;
+  color: #dfe9ff;
+  line-height: 1.6;
+}
+
+.sign {
+  margin-top: 18px;
+  text-align: right;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.floating {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+@media (max-width: 860px) {
+  .content {
+    flex-direction: column;
+  }
+  .meta {
+    width: 100%;
+    order: 2;
+    text-align: left;
+  }
+  .message {
+    order: 1;
+  }
+}
